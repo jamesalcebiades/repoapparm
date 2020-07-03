@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'AzureRMPipeline'
     location: 'Brazil South'
     templateLocation: 'Linked artifact'
-    csmFile: 'jamesalcebiades/repoapparm/azuredeply.json'
+    csmFile: 'repoapparm/azuredeploy.json'
     overrideParameters: '-projectName learnarm -linkedTemplateUri https://raw.githubusercontent.com/jamesalcebiades/repoapparm/master/azuredeploy.parameters.json'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
