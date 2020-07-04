@@ -4,28 +4,24 @@
         "parameters" : {
         "envPar": {
             "type": "string",
-            "defaultValue": "dev",
             "metadata":{
                 "description": "The environment."
             }
         },
         "countPar": {
             "type": "string",
-            "defaultValue": "001",
             "metadata": {
                 "description": "count object."
             }
         },
         "resource_namePar": {
             "type": "string",
-            "defaultValue": "rg-gp",
             "metadata": {
                 "description": "Resource group name."
             }
         },
         "location": {
             "type": "string",
-            "defaultValue": "brazilsouth",
             "metadata": {
                 "description": "Location for all resources."
             }
@@ -34,10 +30,12 @@
     },
 
     "variables": {
-        "varResourceName" : "[concat(parameters('resource_namePar'),parameters('envPar'),parameters('countPar'))]",
+        "varResourceName" : "[concat(parameters('resource_namePar'), concat('-'),
+                                     parameters('envPar'), concat('-'),
+                                     parameters('countPar'))]",
         "varLocation": "[parameters('location')]"
     },
-    
+
 
     "resources": [
         {
