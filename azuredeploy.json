@@ -37,6 +37,7 @@
         "varResourceName" : "[concat(parameters('resource_namePar'),parameters('envPar'),parameters('countPar'))]",
         "varLocation": "[parameters('location')]"
     },
+    
 
     "resources": [
         {
