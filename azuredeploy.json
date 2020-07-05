@@ -26,24 +26,20 @@
                 "description": "Location for all resources."
             }
         } 
-
     },
 
     "variables": {
-        "varResourceName" : "[concat(parameters('resource_namePar'), concat('-'),
-                                     parameters('envPar'), concat('-'),
-                                     parameters('countPar'))]",
-        "varLocation": "[parameters('location')]"
+         "varLocation": "[parameters('location')]",
+         "envPar" : "[parameters('envPar')]"
+        
     },
-
 
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion" : "2018-05-01",
-            "name": "[variables('varResourceName')]",
             "location" : "[variables('varLocation')]",
-            "properties" : {}
-        }
+ 
+         }
     ]
   }
