@@ -4,13 +4,13 @@
 
     "parameters": {
         "envPar": {
-            "value": "dev"
+            "value": ""
         },
         "countPar": {
-            "value": "001"
+            "value": ""
         },
         "resource_namePar": {
-            "value": "rs-gp" 
+            "value": "" 
         },
         "location": {
             "value": "brazilsouth" 
