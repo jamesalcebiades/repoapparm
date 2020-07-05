@@ -1,9 +1,27 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
-    "functions": [],
+    "parameters": {
+      "locationVar": {
+        "type": "string",
+        "metadata": {
+          "description" :"The all locations."
+        }
+      },
+      "resource_nameVar": {
+        "type": "string"
+      }
+
+    },
     "variables": {},
-    "resources": [],
+    "resources": [
+      {
+        "type": "Microsoft.Resources/resourceGroups",
+        "apiVersion": "2018-05-01",
+        "name": "[parameters('resource_nameVar')]",
+        "location": "[parameters('locationVar')]"
+
+      }
+    ],
     "outputs": {}
 }
