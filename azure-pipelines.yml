@@ -19,5 +19,6 @@ steps:
     resourceGroupName: '$(resource_name)-$(env)-$(count)'
     location: '$(region)'
     templateLocation: 'Linked artifact'
+    csmFile: '$(System.DefaultWorkingDirectory)/_LearnARM-CI/drop/azuredeploy.json'
     deploymentMode: 'Incremental'
     deploymentName: 'resource'
