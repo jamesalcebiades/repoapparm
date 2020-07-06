@@ -10,16 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: AzureResourceManagerTemplateDeployment@3
+- task: AzureCLI@2
   inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'AzureARM-conn'
-    subscriptionId: 'bba12a48-76de-4498-b0bf-77e7ce1d2b58'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: '$(resource_name)-$(env)-$(count)'
-    location: '$(region)'
-    templateLocation: 'Linked artifact'
-    csmFile: '$(System.DefaultWorkingDirectory)/_LearnARM-CI/drop/azuredeploy.json'
-    csmParametersFile: '$(System.DefaultWorkingDirectory)/_LearnARM-CI/drop/azuredeploy.parameters.json'
-    deploymentMode: 'Incremental'
-    deploymentName: 'resource'
+    azureSubscription: 'AzureARM-conn'
+    scriptType: 'ps'
+    scriptLocation: 'scriptPath'
+    scriptPath: '$(System.DefaultWorkingDirectory)/Deploy-AzureResourceGroup.ps1'
+    arguments: '-ResourceGroupName $(resource_name)-$(env)-$(count)'
