@@ -15,5 +15,5 @@ steps:
     azureSubscription: 'AzureARM-conn'
     scriptType: 'ps'
     scriptLocation: 'scriptPath'
-    scriptPath: '$(System.DefaultWorkingDirectory)/Deploy-AzureResourceGroup.ps1'
+    scriptPath: '$(System.DefaultWorkingDirectory)/_LearnARM-CI/drop/AzureResourceGroup/AzureResourceGroup/Deploy-AzureResourceGroup.ps1'
     arguments: '-ResourceGroupName $(resource_name)-$(env)-$(count)'
